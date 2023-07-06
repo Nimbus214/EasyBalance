@@ -12,9 +12,9 @@
 
 Использование API
 
-Микросервис предоставляет следующие эндпоинты:
+Микросервис предоставляет следующие эндпоинты (Все примеры запросов для PowerShell):
 
-POST '/users': Создание нового пользователя. Пример запроса PowerShell: 
+POST '/users': Создание нового пользователя. Пример запроса: 
 Invoke-WebRequest -Method POST -Uri http://localhost:8080/users -Headers @{"Content-Type" = "application/json"} -Body '{"ID":"user123","Balance":100.0}'
 
 GET '/balance?user_id={user_id}': Получение баланса пользователя по идентификатору. Пример запроса: 
