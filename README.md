@@ -14,16 +14,16 @@
 
 Микросервис предоставляет следующие эндпоинты:
 
-POST '/users': Создание нового пользователя. Пример запроса PowerShell:
+POST '/users': Создание нового пользователя. Пример запроса PowerShell: 
 Invoke-WebRequest -Method POST -Uri http://localhost:8080/users -Headers @{"Content-Type" = "application/json"} -Body '{"ID":"user123","Balance":100.0}'
 
-GET '/balance?user_id={user_id}': Получение баланса пользователя по идентификатору. Пример запроса:
+GET '/balance?user_id={user_id}': Получение баланса пользователя по идентификатору. Пример запроса: 
 Invoke-WebRequest -Method GET -Uri "http://localhost:8080/balance?user_id=user123"
 
-POST '/balance/update': Обновление баланса пользователя (зачисление). Пример запроса:
+POST '/balance/update': Обновление баланса пользователя (зачисление). Пример запроса: 
 Invoke-WebRequest -Method POST -Uri http://localhost:8080/balance/update -Headers @{"Content-Type" = "application/json"} -Body '{"user_id":"user123","amount":50.0,"is_debit":false}'
 
-POST '/balance/update': Обновление баланса пользователя (списание средств). Пример запроса:
+POST '/balance/update': Обновление баланса пользователя (списание средств). Пример запроса: 
 Invoke-WebRequest -Method POST -Uri http://localhost:8080/balance/update -Headers @{"Content-Type" = "application/json"} -Body '{"user_id":"user123","amount":30.0,"is_debit":true}'
 
 Зачисление и списание зависит от значения флага 'is_debit';
